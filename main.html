@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo Mobile Banking</title>
+
+    <!-- --------- roboto font link ------ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- --------- daisyUI link ------- -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+            fontFamily: {
+                'roboto': ['Roboto', 'system-ui'],
+              }
+            }
+          }
+        }
+      </script>
+
+</head>
+
+
+<body class="font-roboto">
+    
+
+    <header class="flex justify-between max-w-[90%] mx-auto bg-white mt-8">
+
+
+        <!-- ------left header----- -->
+        <section class="flex items-center gap-4">
+            <div>
+                <img class="w-12" src="images/payoo.png" alt="">
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold" id="current-balance">4500</h1>
+                <p class="text-md">Available Balance</p>
+            </div>
+            
+        </section>
+
+        <!-- ------Right header----- -->
+        <section id="logout-btn" class="flex items-center  ">
+
+            <div>
+                <h1 class="text-md bg-slate-100 px-3 py-1 rounded-full"> ⬅️ Logout</h1>
+            </div>
+
+        </section>
+
+    </header>
+
+
+    <div class="divider"></div>
+
+
+    <main class="max-w-[90%] mx-auto">
+
+        <!-- ------- heading section ------- -->
+        <section>
+
+            <h1 class="text-2xl font-bold"> 🔥 Welcome to Payoo!</h1>
+            <p class="text-md text-slate-400 mt-1">Enjoy easy and convenient financial services with us. Cashout charge is low and smooth. </p>
+
+        </section>
+
+
+        <!-- ------------ card sectiona---------- -->
+        <section class="grid grid-cols-3 grid-rows-2 gap-4 mt-6">
+
+
+            <!-- ----- add money card --------- -->
+            <div id="add-money" class="flex flex-col gap-2 items-center border-[1px] border-solid border-sky-500 rounded-xl p-2" >
+                <img class="w-10" src="images/add money icon.png" alt="">
+                <h1 class="text-sm font-medium">Add Money</h1>
+            </div>
+
+
+
+            <!-- ----- cash out card --------- -->
+            <div id="cash-out" class="flex flex-col gap-2 items-center border-[1px] border-solid border-sky-500 rounded-xl p-2">
+                <img class="w-10" src="images/cash out icon.png" alt="">
+                <h1 class="text-sm font-medium">Cash Out</h1>
+            </div>
+
+
+
+
+            <!-- ----- transaction card --------- -->
+            <div id="transaction" class="flex flex-col gap-2 items-center border-[1px] border-solid border-sky-500 rounded-xl p-2">
+                <img class="w-10" src="images/transaction icon.png" alt="">
+                <h1 class="text-sm font-medium">Transactions</h1>
+            </div>
+
+
+
+
+            <!-- ----- get bonus card --------- -->
+            <div id="get-bonus" class="flex flex-col gap-2 items-center border-[1px] border-solid border-sky-500 rounded-xl p-2">
+                <img class="w-10" src="images/bonu.png" alt="">
+                <h1 class="text-sm font-medium">Get Bonus</h1>
+            </div>
+
+
+
+
+            <!-- ----- pay bill card --------- -->
+            <div id="pay-bill" class="flex flex-col gap-2 items-center border-[1px] border-solid border-sky-500 rounded-xl p-2">
+                <img class="w-10" src="images/pay-bill.png" alt="">
+                <h1 class="text-sm font-medium">Pay Bill</h1>
+            </div>
+
+
+
+
+            <!-- ----- transfer money card --------- -->
+            <div id="transfer-money" class="flex flex-col gap-2 items-center border-[1px] border-solid border-sky-500 rounded-xl p-2">
+                <img class="w-10" src="images/tansfer-money.png" alt="">
+                <h1 class="text-sm font-medium">Tansfer Money</h1>
+            </div>
+
+
+
+
+           
+
+
+
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer class="max-w-[90%] mx-auto mb-6">
+
+
+        <!-- ---  add money input data section ---- -->
+
+        <section id="add-money-sec">
+            <h1 class="font-medium text-xl mt-6">Add Money</h1>
+
+
+            <!-- ----------input data section ----- -->
+
+            <div class="hero">
+                <div class="hero-content flex-col lg:flex-row-reverse w-[110%]">
+                  
+                  <div class=" w-full bg-slate-50 shadow-xl rounded-xl ">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Amount</span>
+                        </label>
+                        <input type="email" placeholder="Enter amount to add" class="input input-bordered rounded-full" id="add-money-amount" required />
+                      </div>
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Account Number</span>
+                        </label>
+                        <input type="email" placeholder="Your Bank Account Number" class="input input-bordered rounded-full" id="bank-acc-number"  />
+                        
+                      </div>
+
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Pin</span>
+                        </label>
+                        <input type="password" placeholder="Your Pin Here" class="input input-bordered rounded-full" id="add-money-pin" required />
+                        
+                      </div>
+
+                      
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary rounded-full bg-sky-500 text-lg text-white border-none" id="add-money-btn">Add Money</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ---  Cash Out input data section ---- -->
+
+        <section id="cash-out-sec" class="hidden">
+            <h1 class="font-medium text-xl mt-6">Cash Out</h1>
+
+
+            <!-- ----------input data section ----- -->
+
+            <div class="hero">
+                <div class="hero-content flex-col lg:flex-row-reverse w-[110%]">
+                  
+                  <div class=" w-full bg-slate-50 shadow-xl rounded-xl ">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Amount</span>
+                        </label>
+                        <input type="email" placeholder="Enter amount to cash out" class="input input-bordered rounded-full" id="cash-out-amount" required />
+                      </div>
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Pin</span>
+                        </label>
+                        <input type="password" placeholder="Your Pin Here" class="input input-bordered rounded-full" id="cash-out-pin" required />
+                        
+                      </div>
+
+                      
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary rounded-full bg-sky-500 text-lg text-white border-none" id="cash-out-btn">Cash Out</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ---  transaction history section ---- -->
+
+        <section id="transaction-sec" class="hidden">
+            <h1 class="font-medium text-xl mt-6">Transaction History</h1>
+
+
+            <!-- ----------input data section ----- -->
+
+            <div class="hero">
+
+                <div class="hero-content flex-col lg:flex-row-reverse w-[110%]">
+                  
+                  <div class=" w-full bg-slate-50 shadow-xl rounded-xl ">
+                      
+                    
+
+
+
+                  </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ---  get bonus section ---- -->
+
+        <section id="get-bonus-sec" class="hidden">
+            <h1 class="font-medium text-xl mt-6">Get Bonus</h1>
+
+
+            <!-- ----------input data section ----- -->
+
+            <div class="hero">
+                <div class="hero-content flex-col lg:flex-row-reverse w-[110%]">
+                  
+                  <div class=" w-full bg-slate-50 shadow-xl rounded-xl ">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Coupon Code</span>
+                        </label>
+                        <input type="email" placeholder="Enter your coupon code" class="input input-bordered rounded-full" id="coupon-code" required />
+                      </div>
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Pin</span>
+                        </label>
+                        <input type="password" placeholder="Your Pin Here" class="input input-bordered rounded-full" id="coupon-pin" required />
+                        
+                      </div>
+
+                      
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary rounded-full bg-sky-500 text-lg text-white border-none" id="get-bonus-btn">Get Bonus</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- ---  pay bill input data section ---- -->
+
+        <section id="pay-bill-sec" class="hidden">
+            <h1 class="font-medium text-xl mt-6">Pay Bill</h1>
+
+
+            <!-- ----------input data section ----- -->
+
+            <div class="hero">
+                <div class="hero-content flex-col lg:flex-row-reverse w-[110%]">
+                  
+                  <div class=" w-full bg-slate-50 shadow-xl rounded-xl ">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Amount</span>
+                        </label>
+                        <input type="email" placeholder="Enter amount to pay" class="input input-bordered rounded-full" id="pay-bill-amount" required />
+                      </div>
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Biller's Account Number</span>
+                        </label>
+                        <input type="email" placeholder=" Bank Account Number" class="input input-bordered rounded-full" id="pay-bill-acc-number"  />
+                        
+                      </div>
+
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Pin</span>
+                        </label>
+                        <input type="password" placeholder="Your Pin Here" class="input input-bordered rounded-full" id="pay-bill-pin" required />
+                        
+                      </div>
+
+                      
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary rounded-full bg-sky-500 text-lg text-white border-none" id="pay-bill-btn">Pay Bill</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- ---  transfer money section ---- -->
+
+        <section id="transfer-money-sec" class="hidden">
+            <h1 class="font-medium text-xl mt-6">Transfer Money</h1>
+
+
+            <!-- ----------input data section ----- -->
+
+            <div class="hero">
+                <div class="hero-content flex-col lg:flex-row-reverse w-[110%]">
+                  
+                  <div class=" w-full bg-slate-50 shadow-xl rounded-xl ">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Transfer Amount</span>
+                        </label>
+                        <input type="email" placeholder="Enter amount to transfer" class="input input-bordered rounded-full" id="transfer-amount" required />
+                      </div>
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Account Number</span>
+                        </label>
+                        <input type="email" placeholder="Bank Account Number" class="input input-bordered rounded-full" id="transfer-acc-number"  />
+                        
+                      </div>
+
+
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text font-medium text-lg">Pin</span>
+                        </label>
+                        <input type="password" placeholder="Your Pin Here" class="input input-bordered rounded-full" id="transfer-pin" required />
+                        
+                      </div>
+
+                      
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary rounded-full bg-sky-500 text-lg text-white border-none" id="transfer-btn">Transfer</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </footer>
+
+
+    <!-- --------script file link-------- -->
+    <script src="js files/main.js"></script>
+
+</body>
